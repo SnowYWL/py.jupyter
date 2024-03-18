@@ -11,18 +11,18 @@ import platform
 import threading
 
 def clear_screen():
-    """清空屏幕的函数，兼容不同的操作系统"""
+
     os_name = platform.system()
     if os_name == "Windows":
         os.system('cls')
     else:
         os.system('clear')
 
-# 定义一个全局变量来存储用户输入
+
 user_input = None
 
 def get_input(prompt):
-    """获取用户输入的函数"""
+
     global user_input
     user_input = input(prompt)
 
@@ -62,7 +62,7 @@ def memory_game():
             time.sleep(2)
             clear_screen()
             
-            # 启动一个线程来获取用户输入
+
             user_input = None
             input_thread = threading.Thread(target=get_input, args=("请输入之前的数字：",))
             input_thread.start()
@@ -86,7 +86,7 @@ def memory_game():
     finally:
         input("按任意键退出...")
 
-# 注意：实际运行时请在本地Python环境中运行此函数。
+
 memory_game()
 
 
